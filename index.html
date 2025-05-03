@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Golnar Design | Golnar Aryan – M.Sc Architect</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      scroll-behavior: smooth;
+      background-color: #f4f4f4;
+      color: black;
+    }
+
+    /* --- NAVIGATION --- */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      z-index: 999;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .nav-logo {
+      font-size: 1.0em;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: black;
+      margin: 4px 0;
+      border-radius: 3px;
+    }
+
+    .lang-toggle {
+      cursor: pointer;
+      font-size: 1.1em;
+      font-weight: bold;
+      color: black;
+      padding: 5px 10px;
+      border: 1px solid black;
+      border-radius: 5px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 30px;
+        background: white;
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        border-radius: 8px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* --- HERO SECTION --- */
+    .hero {
+      min-height: 100vh;
+      background: url('C:/Users/Golnar Aryan/Desktop/GA_Logo/image/images-my-hero.png') no-repeat;
+      background-position: 100% 100%;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 100px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 400px;
+      margin-bottom: 150px;
+      margin-left: 90px;
+    }
+
+    .title {
+      font-size: 3em;
+      font-weight: 300;
+      margin: 0;
+      color: black;
+    }
+
+    /* --- ABOUT SECTION --- */
+    .about {
+      padding: 80px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #fff;
+      color: black;
+      font-family: sans-serif;
+      line-height: 1.8;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .about h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      text-align: center;
+      color: black;
+    }
+
+    /* --- CONTACT SECTION --- */
+    .contact {
+      padding: 60px 20px 100px;
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #fff; /* Ensure white background */
+      color: black;
+      font-family: sans-serif;
+      line-height: 1.8;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+      text-align: left; /* Left-align text for readability */
+    }
+
+    .contact h2 {
+      font-size: 2.2em;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #333;
+    }
+
+    .contact p {
+      margin: 10px 0;
+      font-size: 1.1em;
+    }
+
+    .contact p strong {
+      font-weight: bold;
+    }
+
+    .contact .social-links {
+      margin-top: 20px;
+      font-size: 1.1em;
+      color: #007BFF; /* Color for links */
+    }
+
+    .contact .social-links a {
+      text-decoration: none;
+      margin-right: 15px;
+    }
+
+    .contact .social-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="nav-logo">Golnar Design</div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 20px;">
+    <div class="nav-links" id="navLinks">
+      <a href="#hero">Home</a>
+      <a href="#about">About Me</a>
+      <a href="#contact">My Contact</a>
+    </div>
+    <button class="lang-toggle" onclick="toggleLanguage()">EN/DE</button>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <div class="hero" id="hero">
+    <img src="GA_Logo_WB.png" alt="Golnar Design Logo" class="logo" />
+  </div>
+
+  <!-- ABOUT SECTION -->
+  <section class="about" id="about">
+    <h2 id="aboutTitle">About Me</h2>
+    <p id="aboutText1">
+      My name is Golnar Aryan. I’m an architect with a Master’s degree from Politecnico di Milano and over seven years of professional experience in Germany, as well as one year in Italy. I am passionate about designing thoughtful, sustainable, and functional architecture that seamlessly blends aesthetics and technical precision.
+    </p>
+    <p id="aboutText2">
+      My expertise lies in the early to detailed design phases (LPH 1–5), where I’ve worked on a wide range of projects — from residential renovations to new data center developments. I bring a creative mindset, strong organizational skills, and a deep attention to detail to every project I take on.
+    </p>
+    <p id="aboutText3">
+      I follow a holistic planning approach, supported by solid proficiency in BIM methodology (modeling, coordination, and management), and technical tools such as Revit, AutoCAD, Vectorworks, and SketchUp. I value teamwork and client collaboration — because I believe the best architecture comes from shared ideas and clear communication.
+    </p>
+    <p id="aboutText4">
+      Outside of architecture, I recharge and find new inspiration through painting, traveling, and sports — passions that also inform and enrich my design perspective.
+    </p>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact" id="contact">
+    <h2>My Contact</h2>
+    <p><strong>Name:</strong> Golnar Aryan</p>
+    <p><strong>Phone:</strong> +49 176 64665672</p>
+    <p><strong>Email:</strong> arch.golnardesign@gmail.com</p>
+    <p><strong>Social:</strong>
+      <span class="social-links">
+        <a href="https://www.linkedin.com/in/golnar-aryan-933a02361/" target="_blank">LinkedIn</a>
+        <a href="https://www.xing.com/profile/Golnar_Aryan/web_profiles?sc_o=navigation_profile_icon&sc_o_PropActionOrigin=navigation_neffi_80&expandNeffi=true" target="_blank">XING</a>
+        <a href="https://www.instagram.com/golnar_aryan/" target="_blank">Instagram</a>
+      </span>
+    </p>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      nav.classList.toggle('active');
+    }
+
+    function toggleLanguage() {
+      const lang = document.documentElement.lang === 'en' ? 'de' : 'en';
+      document.documentElement.lang = lang;
+
+      if (lang === 'de') {
+        document.getElementById('aboutTitle').textContent = 'Über mich';
+        document.getElementById('aboutText1').textContent =
+          'Ich bin Golnar Aryan, Architektin mit einem Masterabschluss der Politecnico di Milano und über sieben Jahren Berufserfahrung in Deutschland sowie einem Jahr in Italien. Meine Leidenschaft liegt in der Entwicklung durchdachter, nachhaltiger und funktionaler Architektur, die sowohl ästhetisch als auch technisch überzeugt.';
+        document.getElementById('aboutText2').textContent =
+          'Besonders spezialisiert bin ich auf die Leistungsphasen 1 bis 5 – vom ersten Konzept bis zur Ausführungsplanung. In meinen bisherigen Projekten habe ich sowohl Neu- als auch Umbauten sowie komplexe Sanierungen betreut – von Wohnbau bis Rechenzentren. Dabei kombiniere ich Kreativität mit strukturiertem Projektmanagement und einem sicheren Gespür für Details.';
+        document.getElementById('aboutText3').textContent =
+          'Meine Arbeit ist geprägt von einem ganzheitlichen Planungsansatz, gestützt durch fundierte Kenntnisse in BIM-Methoden (Modeling, Koordination und Management) sowie Softwaretools wie Revit, AutoCAD, Vectorworks und SketchUp. Ich schätze die enge Zusammenarbeit im Team und mit Auftraggeber:innen, weil ich überzeugt bin: Gute Architektur entsteht im Dialog.';
+        document.getElementById('aboutText4').textContent =
+          'Neben meiner beruflichen Tätigkeit schöpfe ich neue Energie beim Malen, Reisen und Sport – diese Vielfalt inspiriert auch meine gestalterische Arbeit.';
+      } else {
+        document.getElementById('aboutTitle').textContent = 'About Me';
+        document.getElementById('aboutText1').textContent =
+          'My name is Golnar Aryan. I’m an architect with a Master’s degree from Politecnico di Milano and over seven years of professional experience in Germany, as well as one year in Italy. I am passionate about designing thoughtful, sustainable, and functional architecture that seamlessly blends aesthetics and technical precision.';
+        document.getElementById('aboutText2').textContent =
+          'My expertise lies in the early to detailed design phases (LPH 1–5), where I’ve worked on a wide range of projects — from residential renovations to new data center developments. I bring a creative mindset, strong organizational skills, and a deep attention to detail to every project I take on.';
+        document.getElementById('aboutText3').textContent =
+          'I follow a holistic planning approach, supported by solid proficiency in BIM methodology (modeling, coordination, and management), and technical tools such as Revit, AutoCAD, Vectorworks, and SketchUp. I value teamwork and client collaboration — because I believe the best architecture comes from shared ideas and clear communication.';
+        document.getElementById('aboutText4').textContent =
+          'Outside of architecture, I recharge and find new inspiration through painting, traveling, and sports — passions that also inform and enrich my design perspective.';
+      }
+    }
+
+  </script>
+
+</body>
+</html>
